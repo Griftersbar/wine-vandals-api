@@ -11,7 +11,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["wine-vandals-api-production.up.railway.app"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
