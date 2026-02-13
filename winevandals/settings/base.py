@@ -18,7 +18,7 @@ ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "localhost,127.0.
 
 # Safety fallback: if not set, allow Railway subdomain in production
 if not ALLOWED_HOSTS and os.getenv("RAILWAY_ENVIRONMENT"):
-    ALLOWED_HOSTS = [".up.railway.app"]
+    ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1','wine-vandals-api-production.up.railway.app']
 
 # --- Apps ---
 INSTALLED_APPS = [
