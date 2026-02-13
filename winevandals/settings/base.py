@@ -16,6 +16,10 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 # Comma-separated, e.g. "winevandals.up.railway.app,localhost,127.0.0.1"
 ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if h.strip()]
 
+# Safety fallback: if not set, allow Railway subdomain in production
+if not ALLOWED_HOSTS and os.getenv("RAILWAY_ENVIRONMENT"):
+    ALLOWED_HOSTS = [".up.railway.app"]
+
 # --- Apps ---
 INSTALLED_APPS = [
     "django.contrib.admin",
