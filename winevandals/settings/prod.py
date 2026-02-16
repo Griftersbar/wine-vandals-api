@@ -9,7 +9,7 @@ if SECRET_KEY == "dev-insecure-secret-key":
     raise RuntimeError("SECRET_KEY must be set in production")
 
 # Always provide ALLOWED_HOSTS in prod (Railway domain)
-if not ALLOWED_HOSTS or ALLOWED_HOSTS == ["localhost", "127.0.0.1"]:
+if not ALLOWED_HOSTS or ALLOWED_HOSTS == ["localhost", "127.0.0.1","198.211.99.20","wine-vandals-api-production.up.railway.app"]:
     # You can still set ALLOWED_HOSTS="your-app.up.railway.app"
     raise RuntimeError("ALLOWED_HOSTS must be set in production")
 
@@ -30,3 +30,4 @@ X_FRAME_OPTIONS = "DENY"
 
 # If you later add a frontend on another domain, configure:
 # CSRF_TRUSTED_ORIGINS = ["https://your-frontend.com"]
+
