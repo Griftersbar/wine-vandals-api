@@ -14,7 +14,9 @@ SECRET_KEY = os.getenv("SECRET_KEY", "dev-insecure-secret-key")
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 # Comma-separated, e.g. "winevandals.up.railway.app,localhost,127.0.0.1"
-ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,198.211.99.20,wine-vandals-api-production.up.railway.app").split(",") if h.strip()]
+# ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1,198.211.99.20,wine-vandals-api-production.up.railway.app").split(",") if h.strip()]
+ALLOWED_HOSTS == ["localhost", "127.0.0.1","198.211.99.20","wine-vandals-api-production.up.railway.app"]
+
 
 # --- Apps ---
 INSTALLED_APPS = [
@@ -90,4 +92,5 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.JSONRenderer",
     ],
 }
+
 
